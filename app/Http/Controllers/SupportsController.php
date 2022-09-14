@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\SupportsResource;
 use App\Models\Support;
 use App\Repositories\SupportsRepository;
+use Illuminate\Http\Request;
 
 class SupportsController extends Controller {
 
@@ -14,8 +15,8 @@ class SupportsController extends Controller {
         $this->repository = $repository;
     }
 
-    public function index() {
-        $courses = $this->repository->getAll();
+    public function index(Request $request) {
+        $courses = $this->repository->getAll($request->all());
         return SupportsResource::collection($courses);
     }
 
