@@ -12,7 +12,7 @@ return new class extends Migration {
      */
     public function up() {
         Schema::create('lessons', function (Blueprint $table) {
-            $table->id('id')->primary();
+            $table->id();
             $table->foreignId('module_id')->constrained('modules');
             $table->string('name');
             $table->string('url')->nullable();

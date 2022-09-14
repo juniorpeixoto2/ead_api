@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\LessonsController;
+use App\Http\Controllers\SupportsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -13,4 +16,13 @@ Route::get('/', function () {
 });
 
 
-Route::get('/courses', []);
+Route::get('/courses', [CoursesController::class, 'index']);
+Route::get('/courses/{id}', [CoursesController::class, 'show']);
+
+Route::get('/lessons', [LessonsController::class, 'index']);
+Route::get('/lessons/{id}', [LessonsController::class, 'show']);
+
+Route::get('/supports', [SupportsController::class, 'index']);
+Route::get('/supports/{id}', [SupportsController::class, 'show']);
+
+Route::get('/lessons/{id}/supports', [SupportsController::class, 'show']);

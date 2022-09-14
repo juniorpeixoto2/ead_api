@@ -15,9 +15,8 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('lesson_id')->nullable()->constrained('lessons');
-            $table->foreignId('admin_id')->nullable()->constrained('admins');
-            $table->enum('status', ['P', 'A', 'C'])->default('P');
             $table->text('description')->nullable();
+            $table->enum('status', ['P', 'A', 'C'])->default('P');
             $table->timestamps();
         });
     }
