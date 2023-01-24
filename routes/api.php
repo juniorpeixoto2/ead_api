@@ -23,6 +23,8 @@ Route::get('/lessons', [LessonsController::class, 'index']);
 Route::get('/lessons/{id}', [LessonsController::class, 'show']);
 
 Route::get('/supports', [SupportsController::class, 'index']);
+Route::post('/supports', [SupportsController::class, 'storage']);
+
 Route::get('/supports/{id}', [SupportsController::class, 'show']);
 
 Route::get('/lessons/{id}/supports', [SupportsController::class, 'show']);

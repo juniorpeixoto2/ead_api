@@ -28,4 +28,10 @@ class SupportsRepository {
             })
             ->paginate();
     }
+
+    public function createNew(array $data): Support {
+        $support = $this->entity->create($data);
+
+        return $support;
+    }
 }

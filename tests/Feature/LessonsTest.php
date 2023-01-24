@@ -5,20 +5,21 @@ namespace Tests\Feature;
 // use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use App\Models\Courses;
+use App\Models\Lessons;
 use App\Models\Modules;
 use Tests\TestCase;
 
-class ModulesTest extends TestCase {
+class LessonsTest extends TestCase {
     /**
      * A basic test example.
      *
      * @return void
      */
     public function test_insert() {
-        Modules::factory()->count(7)->create();
+        Lessons::factory()->count(7)->create();
 
-        $modules = Modules::count();
+        $lessons = Lessons::count();
 
-        $this->assertEquals($modules, 14);
+        $this->assertEquals($lessons, 7);
     }
 }

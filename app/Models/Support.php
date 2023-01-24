@@ -8,10 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Support extends Model {
     use HasFactory;
 
-    protected $fillable = ['description', 'status'];
+    protected $fillable = ['user_id', 'lesson_id', 'description', 'status'];
 
-
-    protected $statusOption = [
+    public $statusOption = [
         'P' => 'Pendente, Aguardando Professor',
         'A' => 'Aguardando Aluno',
         'C' => 'Finalizado',
